@@ -4,9 +4,70 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Amerika'da Doğum Paketleri | Amerika Doğum Danışmanlık",
+  title: "Amerika'da Doğum Paketleri | Miami Doğum Danışmanlık 2026",
   description:
-    "Amerika'da doğum yapmak isteyen aileler için profesyonel doğum paketleri, Miami doğum organizasyonu ve vatandaşlık danışmanlığı. Hemen bilgi alın.",
+    "Amerika'da doğum yapmak isteyen aileler için profesyonel doğum paketleri, Miami doğum organizasyonu ve vatandaşlık danışmanlığı. 2026 güncel fiyatlarla bilgi alın.",
+};
+
+const faqs = [
+  {
+    q: "Amerika'da doğum yapmak yasal mı?",
+    a: "Evet, Amerika'da doğum yapmak tamamen yasal bir uygulamadır. B2 turist vizesiyle ABD'ye gidip doğum yapabilirsiniz. ABD Anayasası'nın 14. maddesi, Amerikan topraklarında doğan her çocuğa otomatik vatandaşlık hakkı tanımaktadır.",
+  },
+  {
+    q: "Amerika doğum vizesi nasıl alınır?",
+    a: "Amerika doğum vizesi için B2 (turist/tıbbi) vize başvurusu yapmanız yeterlidir. DS-160 formunu doldurarak ABD Büyükelçiliği'nden randevu alır, mali yeterlilik belgeleriniz ve hastane rezervasyonunuzla mülakata girersiniz. Hamileliğinizi gizlemenize gerek yoktur.",
+  },
+  {
+    q: "Amerika doğum maliyeti 2026 ne kadar?",
+    a: "2026 yılında Amerika'da doğum maliyeti $15,000 ile $40,000 arasında değişmektedir. Hastane doğum ücreti $8,000-$15,000, konaklama $3,000-$8,000, organizasyon ve danışmanlık hizmetleri ise $2,000-$5,000 arasındadır.",
+  },
+  {
+    q: "Amerika'da doğan çocuk vatandaş olur mu?",
+    a: "Evet. ABD Anayasası'nın 14. maddesi (Jus Soli ilkesi) gereğince Amerika'da doğan her bebek, ebeveynlerin uyruğundan bağımsız olarak otomatik olarak Amerikan vatandaşı olur. Herhangi bir başvuru gerekmez; vatandaşlık doğumla kendiliğinden kazanılır.",
+  },
+  {
+    q: "Amerika doğum ajansı seçerken nelere dikkat edilmeli?",
+    a: "Amerika doğum ajansı seçerken deneyim süresi, referanslar, hastane anlaşmaları, sunulan hizmetlerin kapsamı ve şeffaf fiyatlandırmaya dikkat etmelisiniz. 5 yılı aşkın deneyimimiz ve 500'den fazla mutlu ailemizle güvenilir bir Amerika doğum danışmanlık hizmeti sunuyoruz.",
+  },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      name: "Amerika Doğum Paketleri",
+      url: "https://www.amerikadogumpaketleri.com",
+      logo: "https://www.amerikadogumpaketleri.com/logo.png",
+      description:
+        "Amerika'da doğum danışmanlık ve organizasyon hizmetleri sunan profesyonel ajans.",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "TR",
+      },
+      sameAs: ["https://www.amerikadogumpaketleri.com"],
+    },
+    {
+      "@type": "WebSite",
+      url: "https://www.amerikadogumpaketleri.com",
+      name: "Amerika Doğum Paketleri",
+      description:
+        "Amerika'da doğum paketleri, Miami doğum organizasyonu ve ABD vatandaşlık danışmanlığı.",
+      inLanguage: "tr",
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.a,
+        },
+      })),
+    },
+  ],
 };
 
 const packages = [
@@ -54,6 +115,11 @@ const packages = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+
       {/* Hero */}
       <section className="bg-navy text-white py-24 px-4">
         <div className="max-w-5xl mx-auto text-center">
@@ -244,6 +310,14 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/amerika-dogum-paketleri"
+              className="text-navy font-semibold hover:text-gold transition-colors underline"
+            >
+              Tüm Amerika doğum paketleri ve detayları →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -326,6 +400,14 @@ export default function HomePage() {
               </ul>
             </div>
           </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/miamide-dogum-yapmak"
+              className="text-navy font-semibold hover:text-gold transition-colors underline"
+            >
+              Miami&apos;de doğum paketleri ve hastane seçenekleri →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -354,6 +436,117 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Amerika Doğum Vizesi */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-navy mb-6 text-center">
+            Amerika Doğum Vizesi
+          </h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+            Amerika&apos;da doğum için B2 (turist/tıbbi) vizesi yeterlidir. Hamileliği gizlemenize gerek yoktur; mali yeterliliği belgeleyen evraklar en kritik unsurdur.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h3 className="text-xl font-bold text-navy mb-4">Vize Başvurusu için Gerekenler</h3>
+              <ul className="space-y-2 text-sm text-gray-700 mb-6">
+                {[
+                  "Geçerli Türk pasaportu",
+                  "Doldurulmuş DS-160 formu",
+                  "Banka hesap dökümleri (mali yeterlilik)",
+                  "Hastane rezervasyon belgesi",
+                  "Doktor onayı ve hamilelik belgesi",
+                  "Konaklama rezervasyonu",
+                ].map((doc) => (
+                  <li key={doc} className="flex items-center gap-2">
+                    <span className="text-gold font-bold">✓</span>
+                    {doc}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/amerika-dogum-vizesi"
+                className="text-navy font-semibold hover:text-gold transition-colors underline"
+              >
+                Amerika doğum vizesi hakkında detaylı rehber →
+              </Link>
+            </div>
+            <div className="bg-navy text-white rounded-2xl p-8">
+              <h3 className="text-gold font-semibold text-lg mb-4">Vize Sürecinde Dikkat Edilecekler</h3>
+              <ul className="space-y-3 text-sm">
+                {[
+                  "🗓️ Başvuruyu doğumdan en az 3 ay önce yapın",
+                  "💰 En az $20,000 banka hesabı gösterin",
+                  "📄 Tüm belgeleri eksiksiz hazırlayın",
+                  "🤝 Biz tüm belge hazırlığında yanınızdayız",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Avantajlar ve Dezavantajlar */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-bold text-navy mb-6 text-center">
+            Amerika&apos;da Doğumun Avantajları ve Dezavantajları
+          </h2>
+          <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
+            Amerika&apos;da doğum kararı vermeden önce avantajları ve dezavantajları birlikte değerlendirmenizi öneririz.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-green-50 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-green-700 mb-4">✅ Avantajları</h3>
+              <ul className="space-y-3 text-sm text-gray-700">
+                {[
+                  "Bebeğiniz doğumla ABD vatandaşı olur",
+                  "186+ ülkeye vizesiz güçlü pasaport",
+                  "ABD'de ücretsiz K-12 eğitim hakkı",
+                  "ABD'de yasal çalışma ve yerleşim hakkı",
+                  "21 yaşında ebeveyne green card imkânı",
+                  "Dünya standartlarında tıbbi hizmet",
+                  "ABD Medicare/Medicaid sağlık güvencesi",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-green-600 font-bold mt-0.5">+</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-orange-50 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-orange-700 mb-4">⚠️ Dezavantajları</h3>
+              <ul className="space-y-3 text-sm text-gray-700">
+                {[
+                  "Toplam maliyet $15,000–$40,000 arasında",
+                  "3-4 ay ABD'de kalış gerektirir",
+                  "Vize reddi riski (finansal belgeler kritik)",
+                  "Uzun uçuş süresi (İstanbul–Miami ~13 saat)",
+                  "Doğum sonrası adaptasyon süreci",
+                  "Kültürel ve dil farklılıkları",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="text-orange-600 font-bold mt-0.5">−</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-gray-600 mt-8 text-sm">
+            Avantaj ve dezavantajları değerlendirip karar vermek için{" "}
+            <Link href="/amerikada-dogum" className="text-navy font-semibold hover:text-gold underline">
+              Amerika&apos;da doğum rehberimizi
+            </Link>{" "}
+            inceleyebilir veya ücretsiz danışmanlık alabilirsiniz.
+          </p>
         </div>
       </section>
 
@@ -387,6 +580,37 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-navy mb-4 text-center">
+            Sık Sorulan Sorular
+          </h2>
+          <p className="text-center text-gray-600 mb-10 max-w-xl mx-auto">
+            Amerika&apos;da doğum hakkında en çok merak edilen soruları yanıtladık.
+          </p>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <div key={faq.q} className="bg-white rounded-xl p-6 shadow-sm">
+                <h3 className="font-bold text-navy mb-2">{faq.q}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+          <p className="text-center mt-8 text-sm text-gray-600">
+            Daha fazla soru için{" "}
+            <Link href="/amerikada-dogum" className="text-navy font-semibold hover:text-gold underline">
+              Amerika&apos;da doğum rehberimizi
+            </Link>{" "}
+            ziyaret edin ya da{" "}
+            <Link href="/#form" className="text-navy font-semibold hover:text-gold underline">
+              ücretsiz danışmanlık
+            </Link>{" "}
+            talep edin.
+          </p>
         </div>
       </section>
 

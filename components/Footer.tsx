@@ -5,6 +5,7 @@ const footerLinks = [
   { label: "Amerika doğum paketleri", href: "/amerika-dogum-paketleri" },
   { label: "Amerika doğum maliyeti", href: "/amerikada-dogum-maliyeti" },
   { label: "Amerika doğum vatandaşlık", href: "/amerika-dogum-vatandaslik" },
+  { label: "Amerika doğum vizesi", href: "/amerika-dogum-vizesi" },
   { label: "Miami'de doğum yapmak", href: "/miamide-dogum-yapmak" },
   { label: "Amerika doğum danışmanlık", href: "/amerikada-dogum" },
 ];

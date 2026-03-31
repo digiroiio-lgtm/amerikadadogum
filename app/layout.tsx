@@ -14,9 +14,9 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Amerika'da Doğum Paketleri | Amerika Doğum Danışmanlık",
+  title: "Amerika'da Doğum Paketleri | Miami Doğum Danışmanlık 2026",
   description:
-    "Amerika'da doğum yapmak isteyen aileler için Amerika doğum paketleri, Miami doğum organizasyonu ve vatandaşlık danışmanlığı hizmeti.",
+    "Amerika'da doğum yapmak isteyen aileler için Amerika doğum paketleri, Miami doğum organizasyonu ve vatandaşlık danışmanlığı hizmeti. 2026 güncel bilgi.",
 };
 
 export default function RootLayout({
