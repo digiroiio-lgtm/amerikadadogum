@@ -3,7 +3,9 @@
 const message = encodeURIComponent(
   "Merhaba Amerika'da doğum paketleri hakkında bilgi almak istiyorum."
 );
-const WHATSAPP_URL = `https://wa.me/1XXXXXXXXXX?text=${message}`;
+const whatsappNumber =
+  process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "1XXXXXXXXXX";
+const WHATSAPP_URL = `https://wa.me/${whatsappNumber}?text=${message}`;
 
 export default function WhatsAppButton() {
   return (

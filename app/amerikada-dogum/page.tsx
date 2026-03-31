@@ -32,6 +32,7 @@ const faqs = [
 ];
 
 export default function AmeriakadaDogumPage() {
+  const phone = process.env.NEXT_PUBLIC_PHONE ?? "+90XXXXXXXXXX";
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -41,7 +42,7 @@ export default function AmeriakadaDogumPage() {
         description:
           "Amerika'da doğum danışmanlık ve organizasyon hizmetleri",
         url: "https://www.amerikadogumpaketleri.com",
-        telephone: "+90XXXXXXXXXX",
+        telephone: phone,
         address: {
           "@type": "PostalAddress",
           addressCountry: "TR",
